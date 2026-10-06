@@ -1,0 +1,29 @@
+# --- Python 运行环境与缓存 ---
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- 密钥与本地配置（程序不会自动读取 .env，这里只是防止误提交）---
+.env
+.env.*
+*.pem
+*.key
+
+# --- 编辑器与系统文件 ---
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+~$*
+
+# --- 临时产物 ---
+# 说明：output/ 里的计划 JSON 与 Markdown 是交付件（案例时间线、报告附录），
+# 需要一起提交，方便组员与助教直接查看，因此不在此忽略。
+tmp/

@@ -1,0 +1,17 @@
+# 统一换行符：仓库内以 LF 保存，检出到 Windows 时由 Git 自动处理，
+# 避免组员之间因为 CRLF/LF 差异产生整文件级的假 diff。
+* text=auto eol=lf
+
+# 二进制文件不参与换行符转换
+*.pdf binary
+*.png binary
+*.jpg binary
+*.docx binary
+*.xlsx binary
+
+# PowerShell 脚本在 Windows 上运行，保留 CRLF 更稳妥
+*.ps1 text eol=crlf
+
+# 生成物与交付件：让 GitHub 的语言统计不被 JSON/Markdown 干扰
+output/*.json linguist-generated=true
+output/*.md linguist-generated=true

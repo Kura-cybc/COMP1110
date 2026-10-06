@@ -1,0 +1,133 @@
+{
+  "plan_schema_version": "1.0",
+  "case_id": "reference-letter-cycle",
+  "case_label": "Negative test case: circular prerequisite in a reference-letter workflow",
+  "programme_id": "demo-cycle",
+  "programme_name": "Synthetic case used to test cycle detection",
+  "programme_type": "exchange",
+  "as_of": "2026-10-01",
+  "student": {
+    "label": "synthetic profile C",
+    "year_of_study": 3,
+    "programme_of_study": "Social Sciences",
+    "target_term": "Semester 1, 2027/28",
+    "notes": [
+      "Intentionally broken on purpose: the reference letter is declared to depend on the shortlist and vice versa.",
+      "The planner must refuse to schedule this instead of emitting a plausible-looking order."
+    ]
+  },
+  "anchors": [
+    {
+      "kind": "today",
+      "label": "Planning date",
+      "anchor_date": "2026-10-01",
+      "state": "stated"
+    },
+    {
+      "kind": "submission_deadline",
+      "label": "Host application deadline",
+      "anchor_date": "2027-03-01",
+      "state": "stated"
+    },
+    {
+      "kind": "departure",
+      "label": "Departure for the host country",
+      "anchor_date": "2027-08-22",
+      "state": "stated"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "shortlist",
+      "title": "Shortlist the target programmes",
+      "title_plain": "选出想申请的学校名单",
+      "action_plain": "按自己的条件和喜好排出目标学校。",
+      "category": "hku_application",
+      "action": "Rank the candidate programmes by fit and eligibility",
+      "prerequisites": [
+        "reference_letter"
+      ],
+      "deadline_basis": "unknown",
+      "duration": {
+        "min_days": 3,
+        "max_days": 7,
+        "basis": "inferred_convention"
+      },
+      "origin": "curated",
+      "origin_note": "Cycle participant"
+    },
+    {
+      "id": "reference_letter",
+      "title": "Request the academic reference letter",
+      "title_plain": "请老师写推荐信",
+      "action_plain": "向任课老师提出推荐信请求，并留出写和修改的时间。",
+      "category": "hku_application",
+      "action": "Ask the course teacher for a reference letter",
+      "documents": [
+        "reference letter"
+      ],
+      "prerequisites": [
+        "shortlist"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "submission_deadline",
+        "offset_days": -30
+      },
+      "deadline_state": "inferred",
+      "duration": {
+        "min_days": 14,
+        "max_days": 21,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 5,
+      "origin": "curated",
+      "origin_note": "Cycle participant: depends on the shortlist it is supposed to precede"
+    },
+    {
+      "id": "host_application",
+      "title": "Submit the host application",
+      "title_plain": "向外校提交申请",
+      "action_plain": "按外校要求的清单提交材料（通常包括护照、成绩单、语言证明）。",
+      "category": "host_application",
+      "action": "Submit the host form with the reference letter attached",
+      "prerequisites": [
+        "reference_letter"
+      ],
+      "deadline_basis": "fixed",
+      "deadline": "2027-03-01",
+      "deadline_state": "stated",
+      "duration": {
+        "min_days": 2,
+        "max_days": 5,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 3,
+      "origin": "curated"
+    },
+    {
+      "id": "visa_application",
+      "title": "Apply for the student visa",
+      "title_plain": "申请英国学生签证",
+      "action_plain": "准备好 CAS、资金证明和护照，在网上提交签证申请。",
+      "category": "visa",
+      "action": "Submit the visa application after the host offer",
+      "prerequisites": [
+        "host_application"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "departure",
+        "offset_days": -21
+      },
+      "deadline_state": "inferred",
+      "duration": {
+        "min_days": 10,
+        "max_days": 21,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 7,
+      "origin": "curated"
+    }
+  ]
+}

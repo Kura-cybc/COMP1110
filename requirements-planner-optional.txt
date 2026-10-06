@@ -1,0 +1,11 @@
+# Optional cross-check dependency for the dependency-modelling module (Gao Huaze).
+#
+# The planner core in `planner/` uses only the Python standard library plus
+# pydantic, so it runs anywhere.  NetworkX - the graph library named in the
+# project plan - is optional and is used in exactly one place: a regression test
+# that checks our own Kahn topological sort, cycle enumeration and longest-chain
+# search against NetworkX's implementations.
+#
+# Install this file only if you want that independent cross-check:
+#   .\.venv\Scripts\python.exe -m pip install -r requirements-planner-optional.txt
+networkx>=3.2,<4

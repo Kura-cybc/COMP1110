@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的申请准备时间表</title>
+  <style>
+    :root { color-scheme: light; --ink:#1b242c; --muted:#6b7680; --line:#e4eaea; --paper:#fff; --bg:#f6f9f8;
+            --teal:#0b7f75; --teal-soft:#e8f4f2; --red:#b3372b; --red-soft:#fdecea;
+            --amber:#8a6113; --amber-soft:#fdf5e3; --green:#1c7048; --green-soft:#e7f5ec; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Segoe UI","Microsoft YaHei",sans-serif; line-height:1.65; }
+    main { max-width:1020px; margin:0 auto; padding:26px 18px 70px; }
+    h1 { font-size:1.65rem; margin:2px 0 6px; }
+    h2 { font-size:1.12rem; margin:0 0 6px; }
+    h3 { font-size:1rem; margin:0 0 6px; }
+    .sub { color:var(--muted); font-size:.9rem; }
+    .card { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-top:16px; }
+    .bar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    select,button,textarea { font:inherit; }
+    select { border:1px solid #c6d2d3; border-radius:9px; padding:9px 11px; background:#fff; min-height:42px; color:var(--ink); }
+    button { border:0; border-radius:9px; background:var(--teal); color:#fff; padding:10px 16px; font-weight:700; cursor:pointer; min-height:42px; }
+    button:hover { filter:brightness(.94); }
+    button.ghost { background:var(--teal-soft); color:var(--teal); font-weight:650; }
+    .verdict { display:flex; gap:12px; align-items:flex-start; border-radius:12px; padding:14px 16px; margin-top:14px; }
+    .verdict .icon { font-size:1.5rem; line-height:1.3; }
+    .verdict b { display:block; font-size:1.05rem; }
+    .verdict.good { background:var(--green-soft); }
+    .verdict.warn { background:var(--amber-soft); }
+    .verdict.bad { background:var(--red-soft); }
+    .facts { display:flex; gap:22px; flex-wrap:wrap; margin-top:14px; }
+    .fact { font-size:.88rem; color:var(--muted); }
+    .fact b { display:block; font-size:1.05rem; color:var(--ink); }
+    table { width:100%; border-collapse:collapse; }
+    th,td { text-align:left; padding:12px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { font-size:.8rem; color:var(--muted); font-weight:700; white-space:nowrap; }
+    td.nowrap { white-space:nowrap; }
+    .step-name { font-weight:700; font-size:1rem; }
+    .step-note { color:var(--muted); font-size:.86rem; }
+    .date { font-weight:700; font-variant-numeric:tabular-nums; }
+    .hint { color:var(--muted); font-size:.8rem; }
+    .badge { display:inline-block; border-radius:6px; padding:1px 8px; font-size:.76rem; font-weight:700; margin-left:6px; }
+    .badge.bad { background:var(--red-soft); color:var(--red); }
+    .badge.soft { background:var(--amber-soft); color:var(--amber); }
+    .issue { border-left:3px solid var(--red); background:#fff8f7; border-radius:8px; padding:12px 14px; margin:10px 0 0; }
+    .issue.soft { border-left-color:#e3ba5e; background:#fffdf7; }
+    .issue b { display:block; margin-bottom:2px; }
+    .track { position:relative; margin:5px 0; height:22px; background:#f3f7f7; border-radius:6px; overflow:hidden; }
+    .track .span { position:absolute; top:0; bottom:0; background:var(--teal-soft); border-radius:6px; }
+    .track .mark { position:absolute; top:0; bottom:0; width:3px; background:var(--teal); }
+    .axis { position:relative; height:18px; font-size:.74rem; color:var(--muted); }
+    .axis span { position:absolute; transform:translateX(-50%); }
+    details { margin-top:14px; }
+    summary { cursor:pointer; color:var(--teal); font-weight:700; }
+    pre { background:#12202a; color:#dcf1eb; padding:12px; border-radius:10px; overflow:auto; font-size:.78rem; max-height:320px; }
+    .error { background:var(--red-soft); border-radius:10px; padding:12px; color:var(--red); }
+    code { background:#eef3f3; border-radius:4px; padding:1px 5px; font-size:.88em; }
+    textarea { width:100%; border:1px solid #c6d2d3; border-radius:9px; padding:10px; font-family:Consolas,monospace; font-size:.78rem; }
+    @media(max-width:760px){ .hide-sm { display:none; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>我的申请准备时间表</h1>
+  <p class="sub">选一个示例，就能看到“每一步做什么、建议哪天开始、最晚不能晚于哪天”。</p>
+
+  <div class="card">
+    <div class="bar">
+      <label class="sub" for="case">示例</label>
+      <select id="case" style="min-width:min(430px,100%)"></select>
+      <button id="show">查看</button>
+      <span class="sub" id="status">正在加载…</span>
+    </div>
+  </div>
+
+  <div id="output"></div>
+
+  <details class="card">
+    <summary>没有网络／没有服务器时怎么看</summary>
+    <p class="sub">如果你是直接双击打开本文件的，上面的示例列表会连不上。请把
+      <code>output\plan_for_viewer.json</code> 的内容粘贴到下面，再点“显示”。</p>
+    <div class="bar"><button id="render" class="ghost">显示</button><button id="download" class="ghost">下载当前时间表</button></div>
+    <textarea id="paste" rows="4" placeholder="把 plan_for_viewer.json 的内容粘贴到这里"></textarea>
+  </details>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let plan = null;
+
+const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+const txt = (v) => (v === null || v === undefined || v === "" ? "—" : esc(v));
+const fmt = (d) => (d ? String(d).replace(/-/g, "/") : "—");
+const days = (a, b) => Math.round((new Date(b) - new Date(a)) / 86400000);
+const pct = (v) => (v === undefined || v === null ? "—" : Math.round(v * 100) + "%");
+
+const CASE_NAMES = {
+  "hkuww-main-round-s1-2027": "示例一：去英国交换一学期（会提示雅思成绩过期）",
+  "hkuww-main-round-s1-2027-valid-score": "示例二：同样流程，但雅思成绩还有效",
+  "reference-letter-cycle": "示例三：步骤顺序写反了，系统会拒绝排期",
+};
+const caseName = (id) => CASE_NAMES[id] || id;
+
+/* ------------------------------------------------------------------ load */
+async function loadCases() {
+  try {
+    const res = await fetch("/api/planner/cases");
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    $("case").innerHTML = data.cases.map((c) => `<option value="${esc(c.case_id)}">${esc(caseName(c.case_id))}</option>`).join("");
+    $("case").value = "hkuww-main-round-s1-2027";
+    $("status").textContent = "";
+    show();
+  } catch (e) {
+    $("status").textContent = "";
+    $("output").innerHTML = `<div class="card"><div class="error">
+      暂时连不上后台。请展开页面最下方的“没有网络／没有服务器时怎么看”。</div></div>`;
+  }
+}
+
+async function show() {
+  const id = $("case").value;
+  if (!id) return;
+  $("status").textContent = "正在生成…";
+  try {
+    const res = await fetch(`/api/planner/plan/${encodeURIComponent(id)}`);
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    plan = await res.json();
+    $("status").textContent = "";
+    render(plan);
+  } catch (e) {
+    $("status").textContent = "";
+    $("output").innerHTML = `<div class="card"><div class="error">生成失败：${esc(e.message)}</div></div>`;
+  }
+}
+
+/* ---------------------------------------------------------------- render */
+function render(p) {
+  const entries = p.entries || [];
+  const blocking = (p.conflicts || []).filter((c) => c.blocking);
+  const soft = (p.conflicts || []).filter((c) => !c.blocking);
+  const nameOf = (id) => {
+    const e = entries.find((x) => x.task_id === id);
+    return e ? (e.title_plain || e.title) : id;
+  };
+  const issues = (list) => list.map((c) => `<div class="issue ${c.blocking ? "" : "soft"}">
+      <b>${esc(c.detail_plain || c.detail)}</b></div>`).join("");
+
+  const starts = entries.map((e) => e.recommended_start).filter(Boolean).sort();
+  const firstStart = starts[0];
+  const lastFinish = entries.map((e) => e.deadline || e.latest_start).filter(Boolean).sort().slice(-1)[0];
+
+  const verdict = blocking.length
+    ? { cls: "bad", icon: "⛔", title: "这份计划现在还不能执行", note: "下面红色框里的问题要先解决，之后计划才成立。" }
+    : soft.length
+      ? { cls: "warn", icon: "⚠️", title: "计划可以执行，但有几处需要你去确认", note: "黄色框里的内容请到官网核对后再动手。" }
+      : { cls: "good", icon: "✅", title: "计划可行，按下面的顺序做即可", note: "每一步的时间都留有余量。" };
+
+  $("output").innerHTML = `
+    <div class="card">
+      <h2>${esc(p.case_label || p.case_id)}</h2>
+      <div class="verdict ${verdict.cls}">
+        <div class="icon">${verdict.icon}</div>
+        <div><b>${esc(verdict.title)}</b><span class="sub">${esc(verdict.note)}</span></div>
+      </div>
+      <div class="facts">
+        <span class="fact">一共几步<b>${entries.length} 步</b></span>
+        <span class="fact">最早开始<b>${fmt(firstStart)}</b></span>
+        <span class="fact">最晚收尾<b>${fmt(lastFinish)}</b></span>
+        <span class="fact">需要先解决<b>${blocking.length} 个问题</b></span>
+        <span class="fact">需要去确认<b>${soft.length} 处</b></span>
+      </div>
+    </div>
+
+    ${blocking.length || soft.length ? `<div class="card">
+      <h2>需要先看这里</h2>
+      ${blocking.length ? `<p class="sub">下面 ${blocking.length} 个问题不解决，计划就不成立。</p>${issues(blocking)}` : ""}
+      ${soft.length ? `<p class="sub" style="margin-top:${blocking.length ? "16px" : "0"}">下面 ${soft.length} 处不影响排期，但请到官网确认一下。</p>${issues(soft)}` : ""}
+    </div>` : ""}
+
+    <div class="card">
+      <h2>每一步该做什么、什么时候做</h2>
+      <p class="sub">从上往下一步步来即可。“建议开始”是动手的日子，“最晚不能晚于”是再拖就来不及的日子。</p>
+      <table>
+        <thead><tr>
+          <th style="width:34px">步骤</th>
+          <th>这一要做什么</th>
+          <th class="hide-sm">建议开始</th>
+          <th class="hide-sm">最晚不能晚于</th>
+          <th class="hide-sm">大约要花</th>
+          <th></th>
+        </tr></thead>
+        <tbody>${entries.map((e) => row(e, nameOf)).join("")}</tbody>
+      </table>
+      ${bar(entries, firstStart, lastFinish)}
+    </div>
+
+    <details class="card">
+      <summary>想了解细节（日期是怎么算出来的、每一步的依据）</summary>
+      <h3 style="margin-top:14px">每个日期是怎么来的</h3>
+      <table><thead><tr><th style="width:38%">步骤</th><th>为什么是这个时间</th></tr></thead>
+        <tbody>${entries.map((e) => `<tr><td>${esc(e.title_plain || e.title)}</td><td class="sub">${esc(e.deadline_source_plain || e.deadline_source)}</td></tr>`).join("")}</tbody></table>
+
+      <h3 style="margin-top:18px">先后顺序（谁必须在谁之前）</h3>
+      <table><thead><tr><th>先完成</th><th>才能开始</th></tr></thead>
+        <tbody>${(p.edges || []).map((e) => `<tr>
+          <td>${esc(nameOf(e.predecessor))}</td><td>${esc(nameOf(e.successor))}${e.kind === "valid_until" ? '<span class="hint">（材料要保持有效）</span>' : ""}</td></tr>`).join("")}</tbody></table>
+
+      <h3 style="margin-top:18px">倒推用到的几个关键日期</h3>
+      <table><thead><tr><th style="width:38%">用在哪里</th><th>日期</th><th class="hide-sm">可靠程度</th></tr></thead>
+        <tbody>${(p.anchors || []).map((a) => `<tr><td>${esc(anchorName(a.kind))}</td>
+          <td class="nowrap">${txt(fmt(a.anchor_date))}</td>
+          <td class="hide-sm">${a.state === "stated" ? "官网写明" : "按惯例估算，建议核对"}</td></tr>`).join("")}</tbody></table>
+
+      <h3 style="margin-top:18px">如果时间很紧，先做哪一步</h3>
+      <p class="sub">下面这些步骤一旦拖延，整个时间表就会跟着往后推。</p>
+      <p>${(p.critical_path || []).map((t) => `<span class="hint">${esc(nameOf(t))}</span>`).join(" → ") || '<span class="sub">这个案例里每一步都还有余量。</span>'}</p>
+
+      <h3 style="margin-top:18px">排序时更看重什么</h3>
+      <p class="sub">系统按四个因素综合排序：越紧急、越影响结果、越难挪动、越花时间的步骤越靠前。
+        本案例的权重为 紧迫 ${pct(p.ahp?.weights?.urgency)}、影响 ${pct(p.ahp?.weights?.impact)}、
+        难挪动 ${pct(p.ahp?.weights?.flexibility)}、花时间 ${pct(p.ahp?.weights?.effort)}。</p>
+
+      <h3 style="margin-top:18px">给组员的技术说明</h3>
+      <p class="sub">下面是系统内部的推导记录。普通使用者可以忽略这一段。</p>
+      <ul class="sub">${(p.notes_plain && p.notes_plain.length ? p.notes_plain : p.notes || []).map((n) => `<li>${esc(n)}</li>`).join("")}</ul>
+      <details style="margin-top:8px"><summary>原始技术记录</summary>
+        <ul class="sub">${(p.notes || []).map((n) => `<li>${esc(n)}</li>`).join("")}</ul>
+      </details>
+      <p class="sub">完整的机器可读结果在计划 JSON 里，可用页面最下方的按钮下载。</p>
+    </details>
+  `;
+
+  $("output").querySelectorAll("[data-more]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const next = btn.closest("tr").nextElementSibling;
+      if (next && next.classList.contains("more-row")) {
+        next.hidden = !next.hidden;
+        btn.textContent = next.hidden ? "详情" : "收起";
+      }
+    });
+  });
+}
+
+function anchorName(kind) {
+  return { today: "开始规划的日子", submission_deadline: "申请截止日", result_release: "结果公布日",
+           acceptance_deadline: "接受录取的截止日", programme_start: "外校开学日",
+           departure: "出发日", return: "回港日" }[kind] || kind;
+}
+
+function row(e, nameOf) {
+  const badges = [];
+  if (e.blocking_plain && e.blocking_plain.length) badges.push('<span class="badge bad">要先解决</span>');
+  else if (e.warnings_plain && e.warnings_plain.length) badges.push('<span class="badge soft">待确认</span>');
+  const sameTitle = String(e.title_plain || "").trim() === String(e.title || "").trim();
+  const note = e.action_plain ? esc(e.action_plain) : (sameTitle ? "" : esc(e.title));
+  return `<tr>
+    <td class="nowrap">${e.order}</td>
+    <td>
+      <div class="step-name">${esc(e.title_plain || e.title)}${badges.join("")}</div>
+      ${note ? `<div class="step-note">${note}</div>` : ""}
+    </td>
+    <td class="hide-sm nowrap"><span class="date">${fmt(e.recommended_start)}</span><div class="hint">建议动手</div></td>
+    <td class="hide-sm nowrap"><span class="date">${fmt(e.latest_start || e.deadline)}</span><div class="hint">再晚就来不及</div></td>
+    <td class="hide-sm nowrap">约 ${e.duration_days || 0} 天${e.buffer_days ? `<div class="hint">另留 ${e.buffer_days} 天缓冲</div>` : ""}</td>
+    <td class="nowrap"><button class="ghost" data-more="1" type="button" style="min-height:34px;padding:5px 12px">详情</button></td>
+  </tr>
+  <tr class="more-row" hidden><td></td><td colspan="5" class="sub">
+    <div>什么时候可以做：${fmt(e.earliest_start)} 起就可以开始，最晚 ${fmt(e.latest_start || e.deadline)}。</div>
+    ${e.deadline ? `<div>官方截止日期：<b>${fmt(e.deadline)}</b>（${esc(e.deadline_source_plain || e.deadline_source)}）</div>` : ""}
+    ${e.prerequisites && e.prerequisites.length ? `<div>要先完成：${e.prerequisites.map((t) => esc(nameOf(t))).join("、")}</div>` : ""}
+    ${e.documents && e.documents.length ? `<div>需要准备：${e.documents.map(esc).join("、")}</div>` : ""}
+    ${e.applies_if ? `<div>适用条件：${esc(e.applies_if)}</div>` : ""}
+    ${(e.blocking_plain || []).concat(e.warnings_plain || []).length
+      ? `<div>需要注意：${(e.blocking_plain || []).concat(e.warnings_plain || []).map(esc).join(" ")}</div>` : ""}
+    <div>官方原文：${(e.sources || []).length
+      ? e.sources.map((s) => `<div style="border-left:2px solid #d3e3e0;padding-left:8px;margin:4px 0">${esc(s.quote)}</div>`).join("")
+      : '<b>这一段还没有找到官方原文，需要你自己去官网核对。</b>'}</div>
+  </td></tr>`;
+}
+
+function bar(entries, first, last) {
+  if (!first || !last) return "";
+  const total = Math.max(days(first, last), 1);
+  const marks = [];
+  const start = new Date(first);
+  const end = new Date(last);
+  for (let d = new Date(start.getFullYear(), start.getMonth(), 1); d <= end; d.setMonth(d.getMonth() + 1)) {
+    const offset = days(first, d.toISOString().slice(0, 10));
+    if (offset >= 0) marks.push({ left: (offset / total) * 100, label: `${d.getFullYear()}/${d.getMonth() + 1}` });
+  }
+  return `<h3 style="margin-top:22px">整体时间安排一览</h3>
+    <p class="sub">每一条代表一步可以安排的时间段，竖线是建议动手的日子。</p>
+    ${entries.map((e) => {
+      if (!e.earliest_start || !e.latest_start) return "";
+      const left = (days(first, e.earliest_start) / total) * 100;
+      const width = Math.max(((days(e.earliest_start, e.latest_start) + 1) / total) * 100, 0.8);
+      const mark = e.recommended_start ? (days(first, e.recommended_start) / total) * 100 : left;
+      return `<div class="track" title="${esc(e.title_plain || e.title)}">
+        <div class="span" style="left:${left}%;width:${width}%"></div>
+        <div class="mark" style="left:${mark}%"></div>
+      </div>`;
+    }).join("")}
+    <div class="axis">${marks.map((m) => `<span style="left:${m.left}%">${m.label}</span>`).join("")}</div>`;
+}
+
+/* --------------------------------------------------------------- offline */
+$("show").addEventListener("click", show);
+$("case").addEventListener("change", show);
+$("render").addEventListener("click", () => {
+  try { plan = JSON.parse($("paste").value); render(plan); }
+  catch (e) { $("output").innerHTML = `<div class="card"><div class="error">这段内容读不出来，请确认粘贴的是完整的 JSON 文件内容。</div></div>`; }
+});
+$("download").addEventListener("click", () => {
+  if (!plan) return;
+  const url = URL.createObjectURL(new Blob([JSON.stringify(plan, null, 2)], { type: "application/json" }));
+  const a = document.createElement("a");
+  a.href = url; a.download = `时间表_${plan.case_id}.json`; a.click(); URL.revokeObjectURL(url);
+});
+
+loadCases();
+</script>
+</body>
+</html>

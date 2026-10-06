@@ -1,0 +1,29 @@
+{
+  "_comment": [
+    "Anchors for the offline sample.json snapshot (the HKU SAO walkthrough).",
+    "The research schema carries no departure date, so the planner requires this file:",
+    "without it the CLI reports an unknown_anchor conflict instead of guessing.",
+    "Replace the dates with the host's academic calendar before using this for real."
+  ],
+  "anchors": [
+    {
+      "kind": "today",
+      "label": "Offline sample snapshot date",
+      "anchor_date": "2026-09-28",
+      "state": "stated"
+    },
+    {
+      "kind": "departure",
+      "label": "Departure for the host country (placeholder for the offline sample)",
+      "anchor_date": "2027-06-20",
+      "state": "inferred",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "离线示例；具体项目日期须查目标院校官网。",
+          "url": "https://intlaffairs.hku.hk/backend/faqs/sao-application/"
+        }
+      ]
+    }
+  ]
+}

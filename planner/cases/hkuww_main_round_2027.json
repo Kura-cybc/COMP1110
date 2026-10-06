@@ -1,0 +1,633 @@
+{
+  "plan_schema_version": "1.0",
+  "case_id": "hkuww-main-round-s1-2027",
+  "case_label": "HKUWW Main Round, Semester 1 2027/28 - UK partner",
+  "programme_id": "uk-partner-s1-2027",
+  "programme_name": "HKUWW Semester 1 exchange at a UK partner university",
+  "programme_type": "exchange",
+  "as_of": "2026-09-28",
+  "weekly_capacity_days": 6,
+  "student": {
+    "label": "synthetic profile A",
+    "year_of_study": 2,
+    "programme_of_study": "Computer Science",
+    "target_term": "Semester 1, 2027/28",
+    "language_evidence": [
+      "IELTS Academic 6.5, taken 2023-09-09"
+    ],
+    "notes": [
+      "Kept deliberately minimal: no UID, passport number, transcript or bank data.",
+      "The stored IELTS result is the pre-existing score that the worked example turns into a conflict."
+    ]
+  },
+  "anchors": [
+    {
+      "kind": "today",
+      "label": "Planning date = official page snapshot",
+      "anchor_date": "2026-09-28",
+      "state": "stated",
+      "evidence": [
+        {
+          "source_id": "S-KB",
+          "quote": "整理／补充核对日期：2026-10-04。来源：已读的 16 篇 RIC 公众号文章，以及 HKU IAO、ASO、学院与相关政府官网。",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ]
+    },
+    {
+      "kind": "submission_deadline",
+      "label": "HKUWW Main Round application deadline",
+      "anchor_date": "2026-12-11",
+      "state": "stated",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "| Main Round：全年／S1／S2 | 本轮未见单独公布日期 | **2026-10-12** | **2026-12-11** | 2027-02-05 | **2027-02-12** |",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ]
+    },
+    {
+      "kind": "result_release",
+      "label": "HKUWW Main Round result",
+      "anchor_date": "2027-02-05",
+      "state": "stated",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "Main Round：全年／S1／S2 ... 结果 2027-02-05 ...",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ]
+    },
+    {
+      "kind": "acceptance_deadline",
+      "label": "Accept the offer and pay the HK$2,000 deposit",
+      "anchor_date": "2027-02-12",
+      "state": "stated",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "| Main Round：全年／S1／S2 | ... | **2027-02-12** |",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ]
+    },
+    {
+      "kind": "programme_start",
+      "label": "Host semester starts (host academic calendar)",
+      "anchor_date": "2027-09-20",
+      "state": "inferred",
+      "evidence": [
+        {
+          "source_id": "S-KB",
+          "quote": "官方概略窗口：S1／全年提名和外校申请为 2027 年 2–5 月、录取 5–8 月",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ]
+    },
+    {
+      "kind": "departure",
+      "label": "Departure for the host country",
+      "anchor_date": "2027-08-22",
+      "state": "inferred",
+      "evidence": [
+        {
+          "source_id": "S2",
+          "quote": "官方概略窗口：S1／全年提名和外校申请为 2027 年 2–5 月、录取 5–8 月；S2 提名 6–10 月、外校申请 7–11 月、录取 10–12 月。窗口不是某所外校的硬 DDL。",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        },
+        {
+          "source_id": "S8",
+          "quote": "抵达与离境手续：外校 welcome／当地移民机构…… 各国条件见下节，不自动套用游客规则。",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "confirm_eligibility",
+      "title": "Confirm eligibility, course matching and credit-transfer limits with the faculty",
+      "title_plain": "先确认自己符不符合资格、能不能转学分",
+      "action_plain": "对照外校的项目要求，确认自己的年级、专业和课程能不能对得上，需要转学分的话先问学院。",
+      "category": "hku_application",
+      "action": "Check host factsheet requirements against the HKU curriculum and the faculty course list before applying",
+      "channel": "HKUWW page + host factsheet + faculty office",
+      "documents": [
+        "host factsheet (current cycle)"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "submission_deadline",
+        "offset_days": -60
+      },
+      "deadline_raw": "before the HKUWW Main Round application is prepared",
+      "deadline_state": "inferred",
+      "duration": {
+        "min_days": 2,
+        "max_days": 5,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 2,
+      "effort_prone": true,
+      "evidence": [
+        {
+          "source_id": "S3",
+          "quote": "[申请前 FAQ](https://intlaffairs.hku.hk/backend/faqs/before-application/)要求先核对课程限制与学分匹配、及时提交语言证明，提交后不接受修改。",
+          "url": "https://intlaffairs.hku.hk/backend/faqs/before-application/"
+        }
+      ],
+      "origin": "curated",
+      "origin_note": "Documents step 1 of the HKUWW pathway"
+    },
+    {
+      "id": "ielts_retake",
+      "title": "Sit (or re-sit) the IELTS Academic test and keep the score valid until departure",
+      "title_plain": "重考雅思（现有成绩到出发时已经过期）",
+      "action_plain": "现有成绩在出发前就失效了，需要重新报名考试，并在申请前拿到成绩单。",
+      "category": "hku_application",
+      "action": "Book an IELTS Academic test date, sit the test, and store the Test Report Form number",
+      "channel": "British Council / IELTS test centre",
+      "documents": [
+        "IELTS Academic Test Report Form"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "submission_deadline",
+        "offset_days": -30
+      },
+      "deadline_raw": "score must exist before the application is submitted and must still be valid at departure",
+      "deadline_state": "inferred",
+      "duration": {
+        "min_days": 20,
+        "max_days": 26,
+        "basis": "inferred_similar_case"
+      },
+      "buffer_days": 7,
+      "effort_prone": true,
+      "validity": [
+        {
+          "label": "IELTS Academic score validity (24 months)",
+          "taken_date": "2023-09-09",
+          "valid_months": 24,
+          "must_cover": "departure",
+          "deadline_kind": "retention",
+          "state": "stated",
+          "evidence": [
+            {
+              "source_id": "S4",
+              "quote": "Global 英语 IELTS 6.5、单项 ≥6，或 TOEFL 90 且 L22/W17/R21/S21；测试日期须 2025-01-08 或以后。",
+              "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "S2",
+          "quote": "校内准备：100-word personal statement、英语能力证明；具体资格及外校更高 GPA／语言要求查上述官网和当年 factsheet",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ],
+      "origin": "curated",
+      "origin_note": "Pre-existing score seeded from the student profile; the planner must notice it expires"
+    },
+    {
+      "id": "transcript_order",
+      "title": "Order the official HKU transcript",
+      "title_plain": "申请 HKU 正式成绩单",
+      "action_plain": "在 HKU Portal 里申请正式成绩单并缴费，一般需要约 10 个工作日。",
+      "category": "hku_application",
+      "action": "Apply for an official transcript through HKU Portal SIS and pay the fee",
+      "channel": "HKU Portal > SIS > Online Applications > Application for Transcript",
+      "documents": [
+        "official transcript"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "submission_deadline",
+        "offset_days": -14
+      },
+      "deadline_raw": "10 working days normal processing, excluding weekends and public holidays",
+      "deadline_state": "stated",
+      "duration": {
+        "min_days": 10,
+        "max_days": 14,
+        "basis": "stated"
+      },
+      "buffer_days": 4,
+      "evidence": [
+        {
+          "source_id": "S5",
+          "quote": "正常 10 工作日，不含周末及公众假期；新毕业生可能更久。保存申请摘要，Application Record 查状态",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ],
+      "origin": "curated",
+      "origin_note": "Document lead time taken from the knowledge base section 2"
+    },
+    {
+      "id": "personal_statement",
+      "title": "Write the 100-word personal statement and the programme choices",
+      "title_plain": "写 100 字个人陈述、定下志愿顺序",
+      "action_plain": "写一段 100 字的申请理由，并把想去的学校排好先后顺序。",
+      "category": "hku_application",
+      "action": "Draft the 100-word statement and finalise the ranked programme choices",
+      "channel": "HKUWW Outgoing Application System (draft only)",
+      "documents": [
+        "100-word personal statement",
+        "ranked programme choices"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "submission_deadline",
+        "offset_days": -10
+      },
+      "deadline_state": "inferred",
+      "duration": {
+        "min_days": 5,
+        "max_days": 10,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 3,
+      "effort_prone": true,
+      "evidence": [
+        {
+          "source_id": "S2",
+          "quote": "校内准备：100-word personal statement、英语能力证明",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ],
+      "origin": "curated"
+    },
+    {
+      "id": "hkuww_submission",
+      "title": "Submit the HKUWW application in the Outgoing Application System",
+      "title_plain": "在 HKU 系统里提交交换申请",
+      "action_plain": "把成绩单、语言证明和个人陈述上传，在截止日期前提交（提交后不能修改）。",
+      "category": "hku_application",
+      "action": "Upload the transcript, language evidence and statement, then submit the application",
+      "channel": "HKUWW Outgoing Application System (goglobal.hku.hk) via HKU Portal login",
+      "documents": [
+        "official transcript",
+        "language evidence",
+        "100-word personal statement"
+      ],
+      "prerequisites": [
+        "confirm_eligibility",
+        "transcript_order",
+        "personal_statement",
+        "ielts_retake"
+      ],
+      "deadline_basis": "fixed",
+      "deadline": "2026-12-11",
+      "deadline_raw": "Main Round application DDL 2026-12-11",
+      "deadline_state": "stated",
+      "duration": {
+        "min_days": 1,
+        "max_days": 2,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 2,
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "| Main Round：全年／S1／S2 | **2026-10-12** | **2026-12-11** | 2027-02-05 | **2027-02-12** |",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        },
+        {
+          "source_id": "S3",
+          "quote": "提交后不接受修改",
+          "url": "https://intlaffairs.hku.hk/backend/faqs/before-application/"
+        }
+      ],
+      "origin": "curated",
+      "origin_note": "Hard deadline: the only fully stated date in this pathway"
+    },
+    {
+      "id": "interview",
+      "title": "Attend the HKUWW interview if invited",
+      "title_plain": "如果收到邀请，参加 HKU 的面试",
+      "action_plain": "部分申请人会收到面试邀请，收到后按邮件安排的时间参加（不是每个人都要面试）。",
+      "category": "hku_application",
+      "applies_if": "the student receives an interview invitation (not every applicant is interviewed)",
+      "action": "Prepare for and attend the selection interview",
+      "channel": "HKU IAO invitation",
+      "prerequisites": [
+        "hkuww_submission"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "result_release",
+        "offset_days": -20
+      },
+      "deadline_raw": "interviews in mid-January 2027",
+      "deadline_state": "stated",
+      "duration": {
+        "min_days": 2,
+        "max_days": 5,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 2,
+      "optional": true,
+      "evidence": [
+        {
+          "source_id": "S6",
+          "quote": "Main Round 部分申请者于 2026 年 12 月下旬获面试邀请、2027 年 1 月中旬面试；**并非人人面试**。",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ],
+      "origin": "curated"
+    },
+    {
+      "id": "result_release",
+      "title": "Receive the HKUWW selection result",
+      "title_plain": "等 HKU 公布选拔结果",
+      "action_plain": "在申请系统里查看结果，并仔细阅读录取条件。",
+      "category": "hku_application",
+      "action": "Check the result in the application system and read the offer conditions",
+      "channel": "HKUWW Outgoing Application System",
+      "prerequisites": [
+        "hkuww_submission"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "acceptance_deadline",
+        "offset_days": -7
+      },
+      "deadline_state": "stated",
+      "duration": {
+        "min_days": 0,
+        "max_days": 1,
+        "basis": "stated"
+      },
+      "buffer_days": 0,
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "| Main Round：全年／S1／S2 | ... | 2027-02-05 | **2027-02-12** |",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ],
+      "origin": "curated",
+      "origin_note": "Waiting step: the student does not control the date"
+    },
+    {
+      "id": "accept_offer",
+      "title": "Accept the offer and pay the HK$2,000 deposit",
+      "title_plain": "接受录取并交 HK$2,000 押金",
+      "action_plain": "交押金、把付款证明和接受回执合成一个 PDF 上传，并在系统里点击接受。",
+      "category": "offer_acceptance",
+      "action": "Pay the deposit, merge the payment proof with the Letter of Acceptance Reply Slip into one PDF, upload and click Accept",
+      "channel": "HKUWW application system + IAO payment instructions",
+      "documents": [
+        "payment proof",
+        "Letter of Acceptance Reply Slip"
+      ],
+      "prerequisites": [
+        "result_release"
+      ],
+      "deadline_basis": "fixed",
+      "deadline": "2027-02-12",
+      "deadline_raw": "Main Round accept-and-pay DDL 2027-02-12",
+      "deadline_state": "stated",
+      "duration": {
+        "min_days": 2,
+        "max_days": 4,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 3,
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "| Main Round：全年／S1／S2 | ... | **2027-02-12** |",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        },
+        {
+          "source_id": "S7",
+          "quote": "单交押金不算完成接受；学院／学系名额走其指定渠道。",
+          "url": "https://intlaffairs.hku.hk/backend/wp-content/uploads/2025/03/HKUWW_Payment-Instructions.pdf"
+        }
+      ],
+      "origin": "curated"
+    },
+    {
+      "id": "iao_nomination",
+      "title": "Receive the IAO nomination and follow the host instructions",
+      "title_plain": "等国际事务处确认提名，并按外校要求操作",
+      "action_plain": "收到提名确认后，登录外校的申请系统准备第二步申请。",
+      "category": "nomination",
+      "action": "Wait for the IAO nomination confirmation, then log in to the host application portal",
+      "channel": "IAO confirmation + host portal",
+      "prerequisites": [
+        "accept_offer"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "programme_start",
+        "offset_days": -180
+      },
+      "deadline_raw": "official window: nomination and host application in February-May 2027",
+      "deadline_state": "stated",
+      "duration": {
+        "min_days": 10,
+        "max_days": 30,
+        "basis": "inferred_similar_case"
+      },
+      "buffer_days": 7,
+      "evidence": [
+        {
+          "source_id": "S2",
+          "quote": "接受后等待 IAO 确认提名，再按外校入口二次申请。官方概略窗口：S1／全年提名和外校申请为 2027 年 2–5 月",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ],
+      "origin": "curated",
+      "origin_note": "Modelled as a prerequisite of the host application, so the two are never scheduled in parallel"
+    },
+    {
+      "id": "host_application",
+      "title": "Submit the host university application",
+      "title_plain": "向外校提交申请",
+      "action_plain": "按外校要求的清单提交材料（通常包括护照、成绩单、语言证明）。",
+      "category": "host_application",
+      "action": "Complete the host application with the documents the host lists, including passport and language evidence",
+      "channel": "host application portal (link supplied after nomination)",
+      "documents": [
+        "passport",
+        "official transcript",
+        "language evidence",
+        "host-specific forms"
+      ],
+      "prerequisites": [
+        "iao_nomination"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "programme_start",
+        "offset_days": -120
+      },
+      "deadline_raw": "host deadlines are independent; the HKU registration deadline must not be substituted",
+      "deadline_state": "inferred",
+      "duration": {
+        "min_days": 5,
+        "max_days": 12,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 5,
+      "effort_prone": true,
+      "evidence": [
+        {
+          "source_id": "S2",
+          "quote": "**提名不等于录取**；以外校确认收件／正式 offer 为准。",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ],
+      "origin": "curated"
+    },
+    {
+      "id": "host_offer",
+      "title": "Receive the host admission and Letter of Acceptance",
+      "title_plain": "等外校录取通知和录取信",
+      "action_plain": "收到后接受录取，并下载 Letter of Acceptance 用于签证。",
+      "category": "offer_acceptance",
+      "applies_if": "the host approves the application",
+      "action": "Accept the host offer and download the Letter of Acceptance",
+      "channel": "host portal / host email",
+      "prerequisites": [
+        "host_application"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "programme_start",
+        "offset_days": -90
+      },
+      "deadline_raw": "host admission typically May-August for Semester 1",
+      "deadline_state": "inferred",
+      "duration": {
+        "min_days": 14,
+        "max_days": 45,
+        "basis": "inferred_similar_case"
+      },
+      "buffer_days": 7,
+      "evidence": [
+        {
+          "source_id": "S2",
+          "quote": "官方概略窗口：S1／全年提名和外校申请为 2027 年 2–5 月、录取 5–8 月",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ],
+      "origin": "curated",
+      "origin_note": "Waiting step, but the Letter of Acceptance is a valid_until prerequisite of the visa"
+    },
+    {
+      "id": "visa_application",
+      "title": "Apply for the UK student visa",
+      "title_plain": "申请英国学生签证",
+      "action_plain": "准备好 CAS、资金证明和护照，在网上提交签证申请。",
+      "category": "visa",
+      "action": "Prepare the CAS, financial evidence and passport, then submit the student visa application online",
+      "channel": "GOV.UK student visa service",
+      "documents": [
+        "CAS",
+        "passport",
+        "financial evidence",
+        "Letter of Acceptance"
+      ],
+      "prerequisites": [
+        "host_offer"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "departure",
+        "offset_days": -21
+      },
+      "deadline_raw": "decision normally within 3 weeks of the appointment",
+      "deadline_state": "inferred",
+      "duration": {
+        "min_days": 10,
+        "max_days": 21,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 7,
+      "effort_prone": true,
+      "evidence": [
+        {
+          "source_id": "S9",
+          "quote": "英国：签证线索见知识库第 6.6 节；审理时间与材料须查 GOV.UK 当前页面。",
+          "url": "https://www.gov.uk/student-visa"
+        }
+      ],
+      "origin": "curated",
+      "origin_note": "Modelled conservatively: the planner does not give immigration advice, it only orders the step"
+    },
+    {
+      "id": "accommodation_insurance",
+      "title": "Arrange accommodation, insurance and the HKU insurance record",
+      "title_plain": "安排住宿和保险",
+      "action_plain": "申请外校宿舍、确认保险范围，并记下保单号码。",
+      "category": "accommodation",
+      "action": "Apply for host accommodation, confirm insurance coverage and record the policy number",
+      "channel": "host accommodation office + insurer",
+      "prerequisites": [
+        "host_offer"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "departure",
+        "offset_days": -14
+      },
+      "deadline_state": "inferred",
+      "duration": {
+        "min_days": 5,
+        "max_days": 14,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 5,
+      "evidence": [
+        {
+          "source_id": "S10",
+          "quote": "登记支持包含资助考虑、HKU group travel insurance 及同项目学生联系；实际保险保障须另核保单。",
+          "url": "https://intlaffairs.hku.hk/global-short-term-programmes"
+        }
+      ],
+      "origin": "curated"
+    },
+    {
+      "id": "pre_departure_travel",
+      "title": "Book flights and complete pre-departure checks",
+      "title_plain": "订机票、做出发前检查",
+      "action_plain": "拿到签证后再订机票，并按行前清单逐项确认。",
+      "category": "other",
+      "action": "Book travel after the visa is issued and run the pre-departure checklist",
+      "channel": "airline + IAO pre-departure briefing",
+      "prerequisites": [
+        "visa_application"
+      ],
+      "valid_until": [
+        "visa_application"
+      ],
+      "deadline_basis": "relative",
+      "deadline_relative": {
+        "anchor": "departure",
+        "offset_days": -10
+      },
+      "deadline_state": "stated",
+      "duration": {
+        "min_days": 2,
+        "max_days": 5,
+        "basis": "inferred_convention"
+      },
+      "buffer_days": 3,
+      "evidence": [
+        {
+          "source_id": "S11",
+          "quote": "抵达与离境手续：外校 welcome／当地移民机构；报到、住宿入住、居留证／地址登记、选课更改",
+          "url": "https://intlaffairs.hku.hk/hku-worldwide-student-exchange"
+        }
+      ],
+      "origin": "curated"
+    }
+  ]
+}

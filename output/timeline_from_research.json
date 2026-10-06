@@ -1,0 +1,623 @@
+{
+  "plan_schema_version": "1.0",
+  "case_id": "research_offline sample; no live search",
+  "case_label": "offline sample; no live search",
+  "programme_id": "",
+  "programme_name": "",
+  "as_of": "2026-10-04",
+  "anchors": [
+    {
+      "kind": "today",
+      "label": "Offline sample snapshot date",
+      "anchor_date": "2026-09-28",
+      "state": "stated",
+      "evidence": []
+    },
+    {
+      "kind": "departure",
+      "label": "Departure for the host country (placeholder for the offline sample)",
+      "anchor_date": "2027-06-20",
+      "state": "inferred",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "离线示例；具体项目日期须查目标院校官网。",
+          "url": "https://intlaffairs.hku.hk/backend/faqs/sao-application/",
+          "retrieved_at": null
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "task_id": "hku_registration_open",
+      "order": 1,
+      "title": "开始填写 HKU SAO 登记",
+      "title_plain": "开始填写 HKU SAO 登记",
+      "action_plain": null,
+      "category": "hku_application",
+      "programme_id": "sample_sao",
+      "programme_name": "HKU SAO 暑期海外项目流程示例（非具体暑校）",
+      "earliest_start": "2026-10-04",
+      "latest_start": "2027-06-20",
+      "recommended_start": "2027-05-25",
+      "deadline": null,
+      "deadline_source": "no fixed deadline stated; limited by planning horizon (departure)",
+      "deadline_source_plain": "官网没有写固定截止日期，只要赶在出发前完成；同时受限于：以出发日为最后的期限",
+      "duration_days": 0,
+      "buffer_days": 0,
+      "float_days": 259,
+      "on_critical_path": false,
+      "on_driver_chain": false,
+      "state": "at_risk",
+      "state_plain": "有需要确认的地方",
+      "blocking_conflicts": [],
+      "blocking_plain": [],
+      "warnings_plain": [
+        "不知道这项要花多久，日期只能当作参考（步骤：开始填写 HKU SAO 登记）请向学长学姐或负责老师了解大致需要多久，再更新估计值。"
+      ],
+      "warnings": [
+        "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative"
+      ],
+      "documents": [],
+      "prerequisites": [],
+      "action": "计划申请暑校时即可开始填写 HKU 登记",
+      "channel": null,
+      "applies_if": "选择 SAO 项目",
+      "sources": [
+        {
+          "source_id": "S1",
+          "quote": "You can open the application as soon as you plan to apply for a summer programme.",
+          "url": null,
+          "retrieved_at": null
+        }
+      ],
+      "priority": {
+        "score": 0.1524,
+        "criteria": {
+          "impact": 0.55,
+          "urgency": 0.0,
+          "flexibility": 0.0,
+          "effort": 0.0
+        },
+        "weights": {
+          "impact": 0.2772,
+          "urgency": 0.4673,
+          "flexibility": 0.1601,
+          "effort": 0.0954
+        },
+        "rationale": [
+          "impact=0.55x0.277 + urgency=0.00x0.467 + flexibility=0.00x0.160 + effort=0.00x0.095",
+          "weighted sum=0.1524, task weight x1"
+        ]
+      }
+    },
+    {
+      "task_id": "host_application",
+      "order": 2,
+      "title": "向目标院校申请",
+      "title_plain": "向目标院校申请",
+      "action_plain": null,
+      "category": "host_application",
+      "programme_id": "sample_sao",
+      "programme_name": "HKU SAO 暑期海外项目流程示例（非具体暑校）",
+      "earliest_start": "2026-10-04",
+      "latest_start": "2027-06-20",
+      "recommended_start": "2027-05-25",
+      "deadline": null,
+      "deadline_source": "deadline unknown; limited by latest start of successor offer_received",
+      "deadline_source_plain": "官网没有写，需要你去确认；同时受限于：因为下一步「offer_received」要在那之后才能开始",
+      "duration_days": 0,
+      "buffer_days": 0,
+      "float_days": 259,
+      "on_critical_path": false,
+      "on_driver_chain": false,
+      "state": "at_risk",
+      "state_plain": "有需要确认的地方",
+      "blocking_conflicts": [],
+      "blocking_plain": [],
+      "warnings_plain": [
+        "找不到官方截止日期（步骤：向目标院校申请）请到官网（或发邮件询问）确认截止日期，再回来更新。",
+        "不知道这项要花多久，日期只能当作参考（步骤：向目标院校申请）请向学长学姐或负责老师了解大致需要多久，再更新估计值。"
+      ],
+      "warnings": [
+        "no grounded deadline: the plan places this task after its prerequisites and before the horizon, and flags it for manual confirmation",
+        "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative"
+      ],
+      "documents": [],
+      "prerequisites": [],
+      "action": "向目标院校直接提交项目申请",
+      "channel": null,
+      "applies_if": "选择 SAO 项目",
+      "sources": [
+        {
+          "source_id": "S1",
+          "quote": "Apply with the host institution directly.",
+          "url": null,
+          "retrieved_at": null
+        }
+      ],
+      "priority": {
+        "score": 0.1524,
+        "criteria": {
+          "impact": 0.55,
+          "urgency": 0.0,
+          "flexibility": 0.0,
+          "effort": 0.0
+        },
+        "weights": {
+          "impact": 0.2772,
+          "urgency": 0.4673,
+          "flexibility": 0.1601,
+          "effort": 0.0954
+        },
+        "rationale": [
+          "impact=0.55x0.277 + urgency=0.00x0.467 + flexibility=0.00x0.160 + effort=0.00x0.095",
+          "weighted sum=0.1524, task weight x1"
+        ]
+      }
+    },
+    {
+      "task_id": "offer_received",
+      "order": 3,
+      "title": "取得目标院校录取",
+      "title_plain": "取得目标院校录取",
+      "action_plain": null,
+      "category": "offer_acceptance",
+      "programme_id": "sample_sao",
+      "programme_name": "HKU SAO 暑期海外项目流程示例（非具体暑校）",
+      "earliest_start": "2026-10-04",
+      "latest_start": "2027-06-20",
+      "recommended_start": "2027-05-25",
+      "deadline": null,
+      "deadline_source": "deadline unknown; limited by latest start of successor hku_registration_submit",
+      "deadline_source_plain": "官网没有写，需要你去确认；同时受限于：因为下一步「hku_registration_submit」要在那之后才能开始",
+      "duration_days": 0,
+      "buffer_days": 0,
+      "float_days": 259,
+      "on_critical_path": false,
+      "on_driver_chain": false,
+      "state": "at_risk",
+      "state_plain": "有需要确认的地方",
+      "blocking_conflicts": [],
+      "blocking_plain": [],
+      "warnings_plain": [
+        "找不到官方截止日期（步骤：取得目标院校录取）请到官网（或发邮件询问）确认截止日期，再回来更新。",
+        "不知道这项要花多久，日期只能当作参考（步骤：取得目标院校录取）请向学长学姐或负责老师了解大致需要多久，再更新估计值。"
+      ],
+      "warnings": [
+        "no grounded deadline: the plan places this task after its prerequisites and before the horizon, and flags it for manual confirmation",
+        "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative"
+      ],
+      "documents": [],
+      "prerequisites": [
+        "host_application"
+      ],
+      "action": "等待并取得目标院校的录取通知",
+      "channel": null,
+      "applies_if": "目标院校批准申请",
+      "sources": [
+        {
+          "source_id": "S1",
+          "quote": "After receiving your admission",
+          "url": null,
+          "retrieved_at": null
+        }
+      ],
+      "priority": {
+        "score": 0.1524,
+        "criteria": {
+          "impact": 0.55,
+          "urgency": 0.0,
+          "flexibility": 0.0,
+          "effort": 0.0
+        },
+        "weights": {
+          "impact": 0.2772,
+          "urgency": 0.4673,
+          "flexibility": 0.1601,
+          "effort": 0.0954
+        },
+        "rationale": [
+          "impact=0.55x0.277 + urgency=0.00x0.467 + flexibility=0.00x0.160 + effort=0.00x0.095",
+          "weighted sum=0.1524, task weight x1"
+        ]
+      }
+    },
+    {
+      "task_id": "hku_registration_submit",
+      "order": 4,
+      "title": "提交 HKU SAO 登记",
+      "title_plain": "提交 HKU SAO 登记",
+      "action_plain": null,
+      "category": "hku_application",
+      "programme_id": "sample_sao",
+      "programme_name": "HKU SAO 暑期海外项目流程示例（非具体暑校）",
+      "earliest_start": "2026-10-04",
+      "latest_start": "2027-06-20",
+      "recommended_start": "2027-05-25",
+      "deadline": null,
+      "deadline_source": "relative deadline without an anchor; limited by latest start of successor funding",
+      "deadline_source_plain": "只写了先后顺序，没有具体日期，需要你去确认；同时受限于：因为下一步「funding」要在那之后才能开始",
+      "duration_days": 0,
+      "buffer_days": 0,
+      "float_days": 259,
+      "on_critical_path": false,
+      "on_driver_chain": false,
+      "state": "infeasible",
+      "state_plain": "现在做不到，需要先解决下面的问题",
+      "blocking_conflicts": [
+        "relative deadline '录取后才能提交并处理资助申请' has no anchor and offset, so it cannot be resolved to a date; confirm the trigger and its lead time with the official page"
+      ],
+      "blocking_plain": [
+        "只写了“之后”而没有具体日期，无法换算（步骤：提交 HKU SAO 登记）请向官方确认它相对哪个事件的多少天，并换算成具体日期。"
+      ],
+      "warnings_plain": [
+        "不知道这项要花多久，日期只能当作参考（步骤：提交 HKU SAO 登记）请向学长学姐或负责老师了解大致需要多久，再更新估计值。"
+      ],
+      "warnings": [
+        "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative"
+      ],
+      "documents": [],
+      "prerequisites": [
+        "offer_received"
+      ],
+      "action": "收到录取后向 IAO 提交登记",
+      "channel": null,
+      "applies_if": "选择 SAO 项目",
+      "sources": [
+        {
+          "source_id": "S1",
+          "quote": "Submit your registration with IAO.",
+          "url": null,
+          "retrieved_at": null
+        },
+        {
+          "source_id": "S1",
+          "quote": "after you received an admission offer from the host institution",
+          "url": null,
+          "retrieved_at": null
+        }
+      ],
+      "priority": {
+        "score": 0.1524,
+        "criteria": {
+          "impact": 0.55,
+          "urgency": 0.0,
+          "flexibility": 0.0,
+          "effort": 0.0
+        },
+        "weights": {
+          "impact": 0.2772,
+          "urgency": 0.4673,
+          "flexibility": 0.1601,
+          "effort": 0.0954
+        },
+        "rationale": [
+          "impact=0.55x0.277 + urgency=0.00x0.467 + flexibility=0.00x0.160 + effort=0.00x0.095",
+          "weighted sum=0.1524, task weight x1"
+        ]
+      }
+    },
+    {
+      "task_id": "funding",
+      "order": 5,
+      "title": "核查 HKU SAO 资助资格",
+      "title_plain": "核查 HKU SAO 资助资格",
+      "action_plain": null,
+      "category": "funding",
+      "programme_id": "sample_sao",
+      "programme_name": "HKU SAO 暑期海外项目流程示例（非具体暑校）",
+      "earliest_start": "2026-10-04",
+      "latest_start": "2027-06-20",
+      "recommended_start": "2027-05-25",
+      "deadline": null,
+      "deadline_source": "no fixed deadline stated; limited by planning horizon (departure)",
+      "deadline_source_plain": "官网没有写固定截止日期，只要赶在出发前完成；同时受限于：以出发日为最后的期限",
+      "duration_days": 0,
+      "buffer_days": 0,
+      "float_days": 259,
+      "on_critical_path": false,
+      "on_driver_chain": false,
+      "state": "at_risk",
+      "state_plain": "有需要确认的地方",
+      "blocking_conflicts": [],
+      "blocking_plain": [],
+      "warnings_plain": [
+        "不知道这项要花多久，日期只能当作参考（步骤：核查 HKU SAO 资助资格）请向学长学姐或负责老师了解大致需要多久，再更新估计值。"
+      ],
+      "warnings": [
+        "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative"
+      ],
+      "documents": [],
+      "prerequisites": [
+        "hku_registration_submit"
+      ],
+      "action": "查看是否符合 SAO 奖学金或津贴条件",
+      "channel": "无需单独提交申请",
+      "applies_if": "项目属于认可的 SAO 项目且满足资助条件",
+      "sources": [
+        {
+          "source_id": "S2",
+          "quote": "No separate application is necessary.",
+          "url": null,
+          "retrieved_at": null
+        }
+      ],
+      "priority": {
+        "score": 0.1524,
+        "criteria": {
+          "impact": 0.55,
+          "urgency": 0.0,
+          "flexibility": 0.0,
+          "effort": 0.0
+        },
+        "weights": {
+          "impact": 0.2772,
+          "urgency": 0.4673,
+          "flexibility": 0.1601,
+          "effort": 0.0954
+        },
+        "rationale": [
+          "impact=0.55x0.277 + urgency=0.00x0.467 + flexibility=0.00x0.160 + effort=0.00x0.095",
+          "weighted sum=0.1524, task weight x1"
+        ]
+      }
+    },
+    {
+      "task_id": "visa_check",
+      "order": 6,
+      "title": "核查目的地签证或入境规定",
+      "title_plain": "核查目的地签证或入境规定",
+      "action_plain": null,
+      "category": "visa",
+      "programme_id": "sample_sao",
+      "programme_name": "HKU SAO 暑期海外项目流程示例（非具体暑校）",
+      "earliest_start": "2026-10-04",
+      "latest_start": "2027-06-20",
+      "recommended_start": "2027-05-25",
+      "deadline": null,
+      "deadline_source": "deadline unknown; limited by planning horizon (departure)",
+      "deadline_source_plain": "官网没有写，需要你去确认；同时受限于：以出发日为最后的期限",
+      "duration_days": 0,
+      "buffer_days": 0,
+      "float_days": 259,
+      "on_critical_path": false,
+      "on_driver_chain": false,
+      "state": "at_risk",
+      "state_plain": "有需要确认的地方",
+      "blocking_conflicts": [],
+      "blocking_plain": [],
+      "warnings_plain": [
+        "找不到官方截止日期（步骤：核查目的地签证或入境规定）请到官网（或发邮件询问）确认截止日期，再回来更新。",
+        "不知道这项要花多久，日期只能当作参考（步骤：核查目的地签证或入境规定）请向学长学姐或负责老师了解大致需要多久，再更新估计值。"
+      ],
+      "warnings": [
+        "no grounded deadline: the plan places this task after its prerequisites and before the horizon, and flags it for manual confirmation",
+        "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative"
+      ],
+      "documents": [],
+      "prerequisites": [],
+      "action": null,
+      "channel": null,
+      "applies_if": "取决于国籍、目的地和项目性质",
+      "sources": [],
+      "priority": {
+        "score": 0.1524,
+        "criteria": {
+          "impact": 0.55,
+          "urgency": 0.0,
+          "flexibility": 0.0,
+          "effort": 0.0
+        },
+        "weights": {
+          "impact": 0.2772,
+          "urgency": 0.4673,
+          "flexibility": 0.1601,
+          "effort": 0.0954
+        },
+        "rationale": [
+          "impact=0.55x0.277 + urgency=0.00x0.467 + flexibility=0.00x0.160 + effort=0.00x0.095",
+          "weighted sum=0.1524, task weight x1"
+        ]
+      }
+    }
+  ],
+  "weeks": [
+    {
+      "week_start": "2027-05-24",
+      "week_end": "2027-05-30",
+      "items": [
+        "hku_registration_open",
+        "host_application",
+        "offer_received",
+        "hku_registration_submit",
+        "funding",
+        "visa_check"
+      ],
+      "effort_days": 0
+    }
+  ],
+  "edges": [
+    {
+      "predecessor": "host_application",
+      "successor": "offer_received",
+      "kind": "prerequisite",
+      "reason": "host_application must finish before offer_received"
+    },
+    {
+      "predecessor": "offer_received",
+      "successor": "hku_registration_submit",
+      "kind": "prerequisite",
+      "reason": "offer_received must finish before hku_registration_submit"
+    },
+    {
+      "predecessor": "hku_registration_submit",
+      "successor": "funding",
+      "kind": "prerequisite",
+      "reason": "hku_registration_submit must finish before funding"
+    }
+  ],
+  "critical_path": [],
+  "critical_path_basis": "none",
+  "conflicts": [
+    {
+      "kind": "relative_deadline_unresolved",
+      "task_id": "hku_registration_submit",
+      "other_task_id": null,
+      "detail": "relative deadline '录取后才能提交并处理资助申请' has no anchor and offset, so it cannot be resolved to a date; confirm the trigger and its lead time with the official page",
+      "detail_plain": "只写了“之后”而没有具体日期，无法换算（步骤：提交 HKU SAO 登记）请向官方确认它相对哪个事件的多少天，并换算成具体日期。",
+      "blocking": true,
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "Submit your registration with IAO.",
+          "url": null,
+          "retrieved_at": null
+        }
+      ]
+    },
+    {
+      "kind": "unknown_deadline",
+      "task_id": "host_application",
+      "other_task_id": null,
+      "detail": "no grounded deadline: the plan places this task after its prerequisites and before the horizon, and flags it for manual confirmation",
+      "detail_plain": "找不到官方截止日期（步骤：向目标院校申请）请到官网（或发邮件询问）确认截止日期，再回来更新。",
+      "blocking": false,
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "Apply with the host institution directly.",
+          "url": null,
+          "retrieved_at": null
+        }
+      ]
+    },
+    {
+      "kind": "unknown_deadline",
+      "task_id": "offer_received",
+      "other_task_id": null,
+      "detail": "no grounded deadline: the plan places this task after its prerequisites and before the horizon, and flags it for manual confirmation",
+      "detail_plain": "找不到官方截止日期（步骤：取得目标院校录取）请到官网（或发邮件询问）确认截止日期，再回来更新。",
+      "blocking": false,
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "After receiving your admission",
+          "url": null,
+          "retrieved_at": null
+        }
+      ]
+    },
+    {
+      "kind": "unknown_deadline",
+      "task_id": "visa_check",
+      "other_task_id": null,
+      "detail": "no grounded deadline: the plan places this task after its prerequisites and before the horizon, and flags it for manual confirmation",
+      "detail_plain": "找不到官方截止日期（步骤：核查目的地签证或入境规定）请到官网（或发邮件询问）确认截止日期，再回来更新。",
+      "blocking": false,
+      "evidence": []
+    },
+    {
+      "kind": "missing_duration",
+      "task_id": "funding",
+      "other_task_id": null,
+      "detail": "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative",
+      "detail_plain": "不知道这项要花多久，日期只能当作参考（步骤：核查 HKU SAO 资助资格）请向学长学姐或负责老师了解大致需要多久，再更新估计值。",
+      "blocking": false,
+      "evidence": []
+    },
+    {
+      "kind": "missing_duration",
+      "task_id": "hku_registration_open",
+      "other_task_id": null,
+      "detail": "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative",
+      "detail_plain": "不知道这项要花多久，日期只能当作参考（步骤：开始填写 HKU SAO 登记）请向学长学姐或负责老师了解大致需要多久，再更新估计值。",
+      "blocking": false,
+      "evidence": []
+    },
+    {
+      "kind": "missing_duration",
+      "task_id": "hku_registration_submit",
+      "other_task_id": null,
+      "detail": "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative",
+      "detail_plain": "不知道这项要花多久，日期只能当作参考（步骤：提交 HKU SAO 登记）请向学长学姐或负责老师了解大致需要多久，再更新估计值。",
+      "blocking": false,
+      "evidence": []
+    },
+    {
+      "kind": "missing_duration",
+      "task_id": "host_application",
+      "other_task_id": null,
+      "detail": "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative",
+      "detail_plain": "不知道这项要花多久，日期只能当作参考（步骤：向目标院校申请）请向学长学姐或负责老师了解大致需要多久，再更新估计值。",
+      "blocking": false,
+      "evidence": []
+    },
+    {
+      "kind": "missing_duration",
+      "task_id": "offer_received",
+      "other_task_id": null,
+      "detail": "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative",
+      "detail_plain": "不知道这项要花多久，日期只能当作参考（步骤：取得目标院校录取）请向学长学姐或负责老师了解大致需要多久，再更新估计值。",
+      "blocking": false,
+      "evidence": []
+    },
+    {
+      "kind": "missing_duration",
+      "task_id": "visa_check",
+      "other_task_id": null,
+      "detail": "no grounded working time for this task: it is placed by dependency order only, so its dates are indicative",
+      "detail_plain": "不知道这项要花多久，日期只能当作参考（步骤：核查目的地签证或入境规定）请向学长学姐或负责老师了解大致需要多久，再更新估计值。",
+      "blocking": false,
+      "evidence": []
+    }
+  ],
+  "ahp": {
+    "criteria": [
+      "impact",
+      "urgency",
+      "flexibility",
+      "effort"
+    ],
+    "weights": {
+      "impact": 0.2772,
+      "urgency": 0.4673,
+      "flexibility": 0.1601,
+      "effort": 0.0954
+    },
+    "lambda_max": 4.031,
+    "consistency_index": 0.0103,
+    "consistency_ratio": 0.0115,
+    "accepted": true,
+    "rationale": [
+      "AHP over 4 criteria with 6 pairwise judgements",
+      "lambda_max=4.0310, CI=0.0103, CR=0.0115",
+      "CR < 0.10 accepted"
+    ]
+  },
+  "feasibility": "infeasible",
+  "unscheduled": [],
+  "stats": {
+    "tasks": 6,
+    "entries_with_source_quote": 5,
+    "source_grounding_rate": 0.8333,
+    "tasks_with_stated_deadline": 0,
+    "critical_path_length": 0,
+    "blocking_conflicts": 1,
+    "review_items": 9,
+    "ahp_consistency_ratio": 0.0115,
+    "ahp_accepted": true,
+    "as_of": "2026-10-04"
+  },
+  "notes": [
+    "profile: from research snapshot",
+    "planning horizon: 2027-06-20",
+    "critical path basis: none"
+  ],
+  "notes_plain": [
+    "这份计划对应的学生情况：from research snapshot",
+    "所有准备工作必须在 2027-06-20 之前完成",
+    "这个案例没有可提示的重点步骤"
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "request": {
+    "destination": "United Kingdom",
+    "start_date": "2027-06-01",
+    "end_date": "2027-08-31",
+    "programme_type": "summer_school",
+    "major": "Computer Science",
+    "year_of_study": 2,
+    "interests": "AI",
+    "nationality": "",
+    "residence": "Hong Kong",
+    "budget": "",
+    "programme_url": null,
+    "max_programmes": 1
+  },
+  "generated_at": "2026-09-28T00:00:00Z",
+  "provider": "offline sample; no live search",
+  "programmes": [
+    {
+      "id": "sample_sao",
+      "name": "HKU SAO 暑期海外项目流程示例（非具体暑校）",
+      "official_url": "https://intlaffairs.hku.hk/backend/faqs/sao-application/",
+      "programme_type": "summer_school",
+      "destination": "视具体项目而定",
+      "dates": {"value": null, "state": "unknown", "evidence": []},
+      "eligibility": [],
+      "costs": [],
+      "past_cases": [],
+      "steps": [
+        {
+          "id": "host_application",
+          "category": "host_application",
+          "title": "向目标院校申请",
+          "action": {
+            "value": "向目标院校直接提交项目申请",
+            "state": "verified",
+            "evidence": [{"source_id": "S1", "quote": "Apply with the host institution directly."}]
+          },
+          "channel": {"value": null, "state": "unknown", "evidence": []},
+          "deadline": {"kind": "unknown", "date": null, "raw": null, "timezone": null, "trigger": null, "state": "unknown", "evidence": []},
+          "documents": [], "prerequisites": [], "applies_if": "选择 SAO 项目", "notes": ["具体入口、日期及材料需查询目标院校官网。"]
+        },
+        {
+          "id": "hku_registration_open",
+          "category": "hku_application",
+          "title": "开始填写 HKU SAO 登记",
+          "action": {
+            "value": "计划申请暑校时即可开始填写 HKU 登记",
+            "state": "verified",
+            "evidence": [{"source_id": "S1", "quote": "You can open the application as soon as you plan to apply for a summer programme."}]
+          },
+          "channel": {"value": null, "state": "unknown", "evidence": []},
+          "deadline": {"kind": "none", "date": null, "raw": null, "timezone": null, "trigger": null, "state": "verified", "evidence": [{"source_id": "S1", "quote": "You can open the application as soon as you plan to apply for a summer programme."}]},
+          "documents": [], "prerequisites": [], "applies_if": "选择 SAO 项目", "notes": ["打开登记与最终提交属于不同步骤。"]
+        },
+        {
+          "id": "offer_received",
+          "category": "offer_acceptance",
+          "title": "取得目标院校录取",
+          "action": {"value": "等待并取得目标院校的录取通知", "state": "verified", "evidence": [{"source_id": "S1", "quote": "After receiving your admission"}]},
+          "channel": {"value": null, "state": "unknown", "evidence": []},
+          "deadline": {"kind": "unknown", "date": null, "raw": null, "timezone": null, "trigger": null, "state": "unknown", "evidence": []},
+          "documents": [], "prerequisites": ["host_application"], "applies_if": "目标院校批准申请", "notes": ["录取时间由目标院校决定。"]
+        },
+        {
+          "id": "hku_registration_submit",
+          "category": "hku_application",
+          "title": "提交 HKU SAO 登记",
+          "action": {"value": "收到录取后向 IAO 提交登记", "state": "verified", "evidence": [{"source_id": "S1", "quote": "Submit your registration with IAO."}]},
+          "channel": {"value": null, "state": "unknown", "evidence": []},
+          "deadline": {"kind": "relative", "date": null, "raw": "录取后才能提交并处理资助申请", "timezone": null, "trigger": "收到目标院校录取", "state": "verified", "evidence": [{"source_id": "S1", "quote": "after you received an admission offer from the host institution"}]},
+          "documents": [], "prerequisites": ["offer_received"], "applies_if": "选择 SAO 项目", "notes": ["具体提交截止日期仍需核查当年 HKU 公告。"]
+        },
+        {
+          "id": "funding",
+          "category": "funding",
+          "title": "核查 HKU SAO 资助资格",
+          "action": {"value": "查看是否符合 SAO 奖学金或津贴条件", "state": "verified", "evidence": [{"source_id": "S2", "quote": "No separate application is necessary."}]},
+          "channel": {"value": "无需单独提交申请", "state": "verified", "evidence": [{"source_id": "S2", "quote": "No separate application is necessary."}]},
+          "deadline": {"kind": "none", "date": null, "raw": null, "timezone": null, "trigger": null, "state": "verified", "evidence": [{"source_id": "S2", "quote": "No separate application is necessary."}]},
+          "documents": [], "prerequisites": ["hku_registration_submit"], "applies_if": "项目属于认可的 SAO 项目且满足资助条件", "notes": ["资助资格仍需依据个人情况和当年规则核查。"]
+        },
+        {
+          "id": "visa_check",
+          "category": "visa",
+          "title": "核查目的地签证或入境规定",
+          "action": {"value": null, "state": "unknown", "evidence": []},
+          "channel": {"value": null, "state": "unknown", "evidence": []},
+          "deadline": {"kind": "unknown", "date": null, "raw": null, "timezone": null, "trigger": null, "state": "unknown", "evidence": []},
+          "documents": [], "prerequisites": [], "applies_if": "取决于国籍、目的地和项目性质", "notes": ["本离线示例没有查询政府网站。"]
+        }
+      ],
+      "unresolved_questions": ["具体暑校的申请入口、截止日期、资格和材料", "该学生适用的签证或入境规定"]
+    }
+  ],
+  "sources": [
+    {"id": "S1", "url": "https://intlaffairs.hku.hk/backend/faqs/sao-application/", "title": "SAO – Application", "publisher_type": "hku", "retrieved_at": "2026-09-28T00:00:00Z", "read_status": "read", "note": "离线示例；打开官网核查最新内容"},
+    {"id": "S2", "url": "https://intlaffairs.hku.hk/backend/faqs/sao-funding/", "title": "SAO – Funding", "publisher_type": "hku", "retrieved_at": "2026-09-28T00:00:00Z", "read_status": "read", "note": "离线示例；打开官网核查最新内容"}
+  ],
+  "warnings": ["这是内置离线示例，没有执行实时搜索；页面要求可能变化。"]
+}
